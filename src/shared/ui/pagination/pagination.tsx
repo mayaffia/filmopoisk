@@ -4,15 +4,15 @@ import {PagRight} from "../paginationIcons/pagRight";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../app/store/store";
-import {decrement, increment} from "../../../app/store/page";
+import {decrement, increment} from "../../../app/store/film";
 import {PagLeftDis} from "../paginationIcons/pagLeftDis";
 import {PagRightDis} from "../paginationIcons/pagRightDis";
 
 
 export const Pagination = () => {
 
-    const page = useSelector((state: RootState) => state.page.value);
-    const max = useSelector((state: RootState) => state.page.max);
+    const page = useSelector((state: RootState) => state.film.page);
+    const max = useSelector((state: RootState) => state.film.page_max);
 
     const dispatch = useDispatch();
 

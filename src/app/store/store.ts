@@ -1,20 +1,14 @@
 import {combineReducers, configureStore,StoreEnhancer} from "@reduxjs/toolkit";
 import {moviesApi} from "../api/moviesApi";
-import {genreReducer} from "./genre";
-import {yearReducer} from "./year";
-import {titleReducer} from "./title";
 import {isLoggedReducer} from "./isLogged";
-import {pageReducer} from "./page";
+import {filmReducer} from "./film";
 
 
 
 export const rootReducer = combineReducers({
     [moviesApi.reducerPath]: moviesApi.reducer,
-    genre: genreReducer,
-    release_year : yearReducer,
-    title : titleReducer,
     isLogged : isLoggedReducer,
-    page : pageReducer,
+    film : filmReducer
 })
 
 export const setupStore = (rootReducer: any, applyMiddleware1: StoreEnhancer<{ dispatch: unknown }>) => {

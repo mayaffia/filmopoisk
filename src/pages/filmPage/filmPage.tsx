@@ -21,8 +21,10 @@ export const FilmPage = () => {
         <div>
             <Header/>
             {isLoading && <Loader className={styles.loader}/>}
-            {!isLoading && <BigFilmCard filmId={filmId}/>}
-            <Actors film={film}/>
+            {!isLoading && <>
+            <BigFilmCard filmId={filmId}/>
+                <Actors film={film}/>
+            </>}
         </div>
     )
 }

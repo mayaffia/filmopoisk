@@ -2,11 +2,10 @@
 import React, {useEffect, useState} from 'react';
 import styles from "./styles.module.css";
 import {MenuIcon} from "./menuIcon";
-import {setGenre} from "../../../app/store/genre";
 import {useDispatch} from "react-redux";
-import {setYear} from "../../../app/store/year";
+import {setYear} from "../../../app/store/film";
 import {useSearchParams} from "react-router-dom";
-
+import {setGenre} from "../../../app/store/film";
 
 
 type DropdownProps = {

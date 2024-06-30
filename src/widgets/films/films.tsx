@@ -7,17 +7,19 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../app/store/store";
 import {Loader} from "../../shared/ui/loader/loader";
 import {Pagination} from "../../shared/ui/pagination/pagination";
-import {setMax} from '../../app/store/page';
+import {setMax} from '../../app/store/film';
 
 
 export const Films = () => {
 
     const dispatch = useDispatch();
 
-    const genre = useSelector((state: RootState) => state.genre.value);
-    const release_year = useSelector((state: RootState) => state.release_year.value);
-    const title = useSelector((state: RootState) => state.title.value);
-    const page = useSelector((state: RootState) => state.page.value);
+
+    const genre = useSelector((state: RootState) => state.film.genre);
+    const release_year = useSelector((state: RootState) => state.film.release_year);
+    const title = useSelector((state: RootState) => state.film.title);
+    const page = useSelector((state: RootState) => state.film.page);
+
 
 
     const {data: movies, error, isLoading} = moviesApi.useGetMoviesQuery({
