@@ -18,9 +18,10 @@ export const login = ({ username, password }: AuthProps) => {
             setToken(token);
             dispatch(setIsLogged(true));
         } catch (error) {
-            if (error instanceof Error) {
+            /*if (error instanceof Error) {
                 dispatch(setIsLogged(false));
-            }
+            }*/
+            console.log('Failed to login:', error)
         }
     };
 };

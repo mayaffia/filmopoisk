@@ -20,7 +20,7 @@ export const Rating :React.FC<RatingProps> = ({className, movieId, onChange}) =>
 
     const [rating, setRatingS] = useState(Number(localStorage.getItem(ratingKey)));
     const [hover, setHover] = useState(0);
-    const [rateMovie, {data}] = moviesApi.useRateMovieMutation();
+    const [rateMovie, {data, error}] = moviesApi.useRateMovieMutation();
 
 
     useEffect(() => {
@@ -35,11 +35,7 @@ export const Rating :React.FC<RatingProps> = ({className, movieId, onChange}) =>
         localStorage.setItem(ratingKey, String(currentRating));
         rateMovie({ movieId : movieId, user_rate: currentRating })
 
-        try {
-            await rateMovie({ movieId : movieId, user_rate: currentRating });
-        } catch (error) {
-            console.error('Failed to rate movie:', error);
-        }
+        rateMovie({ movieId : movieId, user_rate: currentRating }).unwrap().then().catch((error) => console.log('Failed to rate movie:', error))
     };
 
     const renderIcon = (star: {isHovered: boolean, isClicked: boolean}) => {
