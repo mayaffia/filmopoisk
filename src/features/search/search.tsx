@@ -4,7 +4,7 @@ import {SearchIcon} from "../../shared/ui/serachIcon/searchIcon";
 import styles from './styles.module.css';
 import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
-import {setTitle} from "../../app/store/film";
+import {setPage, setTitle} from "../../app/store/film";
 export const Search = () => {
 
     const [selectedTitle, setSelectedTitle] = useState('');
@@ -14,6 +14,7 @@ export const Search = () => {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedTitle(event.target.value);
+        dispatch(setPage(1))
     };
 
     useEffect(() => {

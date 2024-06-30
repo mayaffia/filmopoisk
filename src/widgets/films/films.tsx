@@ -21,7 +21,6 @@ export const Films = () => {
     const page = useSelector((state: RootState) => state.film.page);
 
 
-
     const {data: movies, error, isLoading} = moviesApi.useGetMoviesQuery({
         genre: genre !== '0' ? genre : undefined,
         release_year: release_year !== '0' ? release_year : undefined,

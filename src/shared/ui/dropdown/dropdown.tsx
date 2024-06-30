@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from "./styles.module.css";
 import {MenuIcon} from "./menuIcon";
 import {useDispatch} from "react-redux";
-import {setYear} from "../../../app/store/film";
+import {setPage, setYear} from "../../../app/store/film";
 import {useSearchParams} from "react-router-dom";
 import {setGenre} from "../../../app/store/film";
 
@@ -41,6 +41,7 @@ export const Dropdown = ({ VALUES, year, genre }: DropdownProps) => {
 
 
     const handleSelect = (value: string) => {
+        dispatch(setPage(1))
         setSelectedValue(VALUES[value]);
         if(year) {
             dispatch(setYear(value));
