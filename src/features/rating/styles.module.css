@@ -1,0 +1,34 @@
+
+.rating {
+    width: 84px;
+    height: 33px;
+    margin-left: auto;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.textnum {
+    font-family: 'SF Pro Text', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.numbers {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+.star {
+    cursor: pointer;
+}

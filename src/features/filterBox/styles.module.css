@@ -1,0 +1,32 @@
+.filterBox {
+    background-color: #FFFFFF;
+    width: 19%;
+    height: 170px;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.wrapper {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.filter {
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.genre {
+    margin-top: 15px;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'SF Pro Text', sans-serif;
+}
+.year {
+    margin-top: 15px;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'SF Pro Text', sans-serif;
+}

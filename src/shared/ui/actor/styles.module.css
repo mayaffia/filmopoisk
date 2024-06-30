@@ -1,0 +1,19 @@
+
+
+.image {
+    width: 100px;
+    height: 151px;
+    border-radius: 8px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.text {
+    margin-top: 10px;
+    color : #1B1F23;
+    font-weight: 400;
+    font-size: 10px;
+    font-family: 'SF Pro Text', sans-serif;
+}

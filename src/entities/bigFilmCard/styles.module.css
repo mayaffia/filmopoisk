@@ -1,0 +1,76 @@
+.filmCard {
+    background-color: #FFFFFF;
+    width: 97%;
+    height: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.image {
+    background-color: black;
+    width: 270px;
+    height: 345px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.title {
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 25px;
+    position: relative;
+    top: 17px;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    margin-left: 25px;
+    gap:16px;
+}
+
+
+.name {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.value {
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.rating {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.description {
+    font-size: 12px;
+    color: #1B1F23;
+    font-weight: 400;
+}
+
+.desc {
+    position: absolute;
+    width: 69%;
+    margin-top: 130px;
+}
+
+.empty {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 84px;
+    height: 33px;
+}
+
