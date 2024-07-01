@@ -5,6 +5,7 @@ import {Star} from "../../shared/ui/starIcons/star";
 import {StarEmpty} from "../../shared/ui/starIcons/starEmpty";
 import {StarHover} from "../../shared/ui/starIcons/starHover"
 import {moviesApi} from "../../app/api/moviesApi";
+import {useCallback} from "react";
 
 
 interface RatingProps {
@@ -20,7 +21,7 @@ export const Rating :React.FC<RatingProps> = ({className, movieId, onChange}) =>
 
     const [rating, setRatingS] = useState(Number(localStorage.getItem(ratingKey)));
     const [hover, setHover] = useState(0);
-    const [rateMovie, {data, error}] = moviesApi.useRateMovieMutation();
+    const [rateMovie, {data}] = moviesApi.useRateMovieMutation();
 
 
     useEffect(() => {
@@ -30,13 +31,19 @@ export const Rating :React.FC<RatingProps> = ({className, movieId, onChange}) =>
     }, [data, onChange]);
 
 
-    const handleRatingChange = async (currentRating: number) => {
+    const debounce = (func : any, wait : any) => {
+        let timeout: any;
+        return (...args: any) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    };
+
+    const handleRatingChange = useCallback(debounce(async (currentRating: number) => {
         setRatingS(currentRating);
         localStorage.setItem(ratingKey, String(currentRating));
-        rateMovie({ movieId : movieId, user_rate: currentRating })
-
         rateMovie({ movieId : movieId, user_rate: currentRating }).unwrap().then().catch((error) => console.log('Failed to rate movie:', error))
-    };
+    }, 300), []);
 
     const renderIcon = (star: {isHovered: boolean, isClicked: boolean}) => {
         if (star.isClicked) {
