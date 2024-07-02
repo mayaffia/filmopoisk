@@ -4,10 +4,12 @@ import React, { useState} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../../app/store/store";
 import {moviesApi} from "../../app/api/moviesApi";
+import {selectIsLogged} from "../../app/store/isLogged";
 
 
 export const BigFilmCard = ({filmId} : any) => {
-    const isLogged = useSelector((state: RootState) => state.isLogged.value);
+
+    const isLogged = useSelector((state : RootState) => selectIsLogged(state))
 
     const {data : film, error} = moviesApi.useGetMovieByIdQuery(filmId);
 

@@ -6,10 +6,11 @@ import {useSelector} from "react-redux";
 import {RootState} from "../../app/store/store";
 import {useState} from "react";
 import {AuthModal} from "../../features/authModal/authModal";
+import {selectIsLogged} from "../../app/store/isLogged";
 
 
 export const Header = () => {
-    const isLogged = useSelector((state: RootState) => state.isLogged.value);
+    const isLogged = useSelector((state : RootState) => selectIsLogged(state))
 
     const [isModalOpen, setModalOpen] = useState(false);
     const handleOpenModal = () => {

@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {RootState} from "./store";
 
 interface IsLoggedState {
     value: boolean;
@@ -21,3 +22,6 @@ export const isLoggedSlice = createSlice({
 export const { setIsLogged } = isLoggedSlice.actions;
 
 export const isLoggedReducer = isLoggedSlice.reducer;
+
+export const selectIsLogged = (state: RootState) => state.isLogged.value;
+

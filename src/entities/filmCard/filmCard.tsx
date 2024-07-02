@@ -4,6 +4,7 @@ import {Rating} from "../../features/rating/rating";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {RootState} from "../../app/store/store";
+import {selectIsLogged} from "../../app/store/isLogged";
 
 
 interface MovieCardProps {
@@ -25,8 +26,7 @@ export const FilmCard : React.FC<MovieCardProps> = ({ image, title, genre, year,
         navigate(`/film/${filmId}`);
     }
 
-    const isLogged = useSelector((state: RootState) => state.isLogged.value);
-
+    const isLogged = useSelector((state : RootState) => selectIsLogged(state))
 
     const [ratingNew, setRating] = useState('');
 
